@@ -23,9 +23,30 @@
         tools:layout="@layout/fragment_game" >
         <action
             android:id="@+id/actionMainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/mainFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
         <argument
             android:name="playerName"
             app:argType="string" />
+        <action
+            android:id="@+id/actionResultFragment"
+            app:destination="@id/resultFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="id.ac.ubaya.informatika.myapplication.ResultFragment"
+        android:label="Result Screen"
+        tools:layout="@layout/fragment_result">
+        <action
+            android:id="@+id/actionMainFragment2"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+        <argument
+            android:name="PlayerScore"
+            app:argType="integer" />
     </fragment>
 </navigation>
