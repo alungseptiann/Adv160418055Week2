@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.fragment_game.*
+import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.fragment_result.*
 
 class ResultFragment : Fragment() {
@@ -22,13 +25,14 @@ class ResultFragment : Fragment() {
 
         if(arguments!=null)
         {
-            var playerScore = ResultFragmentArgs.fromBundle(requireArguments()).playerScore
-            txtTurn.text = "$playerName's turn"
+            var playerScore = ResultFragmentArgs.fromBundle(requireArguments()).PlayerScore
+            txtScore.text = "Your Score is $playerScore"
         }
-        
+
         btnBackToMain.setOnClickListener {
-            val playerScore = txtScore.text.toString()
-            val action =
+            val action = ResultFragmentDirections.actionMainFragment()
+            Navigation.findNavController(it).navigate(action)
+            Toast.makeText(context, "WELLCOME BACK! ABIS KALAH YAA? WOKWOWKOWK", Toast.LENGTH_LONG).show()
         }
     }
 }

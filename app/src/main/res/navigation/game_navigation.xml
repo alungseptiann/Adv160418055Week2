@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="id.ac.ubaya.informatika.myapplication.MainFragment"
-        android:label="main Screen"
-        tools:layout="@layout/fragment_main" >
+        android:label="Main Screen"
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/actionGameFragment"
             app:destination="@id/gameFragment"
@@ -21,11 +21,6 @@
         android:name="id.ac.ubaya.informatika.myapplication.GameFragment"
         android:label="Game Screen"
         tools:layout="@layout/fragment_game" >
-        <action
-            android:id="@+id/actionMainFragment"
-            app:destination="@id/mainFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
         <argument
             android:name="playerName"
             app:argType="string" />
@@ -41,12 +36,15 @@
         android:label="Result Screen"
         tools:layout="@layout/fragment_result">
         <action
-            android:id="@+id/actionMainFragment2"
+            android:id="@+id/actionMainFragment"
             app:destination="@id/mainFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out" />
         <argument
             android:name="PlayerScore"
             app:argType="integer" />
+        <argument
+            android:name="PlayerName"
+            app:argType="string" />
     </fragment>
 </navigation>
