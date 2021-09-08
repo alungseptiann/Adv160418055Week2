@@ -38,6 +38,10 @@ class MainFragment : Fragment() {
                 alertClick(view)
             }
         }
+        btnOption.setOnClickListener {
+            val action = MainFragmentDirections.actionOptionFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
     }
     fun alertClick(view: View)
     {
